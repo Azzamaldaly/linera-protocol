@@ -745,6 +745,7 @@ impl Runnable for Job {
                 transactions_per_block,
                 fungible_application_id,
                 bps,
+                leak_chains,
             } => {
                 assert!(num_chains > 0, "Number of chains must be greater than 0");
                 assert!(
@@ -777,6 +778,7 @@ impl Runnable for Job {
                     blocks_infos,
                     committee,
                     context.client.local_node().clone(),
+                    leak_chains,
                 )
                 .await?;
             }
